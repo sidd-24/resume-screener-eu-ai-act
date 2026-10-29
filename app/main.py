@@ -10,7 +10,7 @@ from app.screener import RequirementExtractionError, screen_candidates
 
 
 app = FastAPI(
-    title="Resume Screener API",
+    title="Resume Screener under EU AI Act API",
     description=(
         "Ranks CVs against a job description as decision support for recruiters. "
         "Personal data is removed before the LLM sees a CV, every claim is backed by a quote "
@@ -30,7 +30,7 @@ def get_audit_log(settings: Settings = Depends(get_settings)) -> AuditLog:
 
 @app.get("/")
 def root():
-    return {"status": "ok", "message": "Resume Screener API is running."}
+    return {"status": "ok", "message": "Resume Screener under EU AI Act API is running."}
 
 
 @app.post("/screen", response_model=ScreeningResponse)

@@ -23,9 +23,9 @@ FLAG_EXPLANATIONS = {
     "truncated": "The CV was very long; only the first part was assessed.",
 }
 
-st.set_page_config(page_title="Resume Screener", page_icon="📋", layout="wide")
+st.set_page_config(page_title="Resume Screener under EU AI Act", page_icon="📋", layout="wide")
 
-st.title("📋 Resume Screener")
+st.title("📋 Resume Screener under EU AI Act")
 st.caption(
     "Decision support for recruiters: personal data is removed before the AI sees a CV, "
     "every match is backed by a quote from the CV, and every run is audit-logged."

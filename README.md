@@ -1,6 +1,6 @@
-# 📋 Resume Screener
+# 📋 Resume Screener under EU AI Act
 
-![tests](https://github.com/sidd-24/resume-screener/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/sidd-24/resume-screener-eu-ai-act/actions/workflows/tests.yml/badge.svg)
 
 An AI-assisted CV screening API built for how hiring is regulated in the EU. Upload a job description and several CVs, and get back a ranked shortlist in which every match is backed by a quote from the CV. Personal data is removed before the LLM sees anything, and every run is written to an audit log.
 
@@ -33,7 +33,7 @@ An AI-assisted CV screening API built for how hiring is regulated in the EU. Upl
 | Layer | Tool |
 |---|---|
 | API Framework | FastAPI (async, CVs assessed in parallel with a concurrency limit) |
-| LLM | Groq, model configurable (default Llama 3.3 70B) |
+| LLM | Groq, model configurable (default GPT-OSS 120B) |
 | Orchestration | LangChain structured output (Pydantic schemas) |
 | PDF Parsing | pypdf |
 | Validation | Pydantic v2 |
@@ -47,7 +47,7 @@ An AI-assisted CV screening API built for how hiring is regulated in the EU. Upl
 ## Project Structure
 
 ```
-resume-screener/
+resume-screener-eu-ai-act/
 ├── app/
 │   ├── main.py          # FastAPI routes, upload limits, error mapping
 │   ├── screener.py      # Orchestrates parsing, anonymising, assessing, ranking
@@ -71,8 +71,8 @@ resume-screener/
 ## Setup
 
 ```bash
-git clone https://github.com/sidd-24/resume-screener
-cd resume-screener
+git clone https://github.com/sidd-24/resume-screener-eu-ai-act
+cd resume-screener-eu-ai-act
 python -m venv venv
 venv\Scripts\activate          # Windows
 # source venv/bin/activate     # Mac/Linux
@@ -112,7 +112,7 @@ curl -X POST http://localhost:8000/screen \
 {
   "run_id": "3f6c1e...",
   "job_title": "Data Engineer",
-  "model": "llama-3.3-70b-versatile",
+  "model": "openai/gpt-oss-120b",
   "requirements_source": "recruiter",
   "requirements": [
     {"name": "Python", "priority": "must_have"},

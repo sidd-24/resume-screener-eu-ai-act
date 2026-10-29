@@ -17,7 +17,7 @@ def get_settings() -> Settings:
     Reads settings from environment variables, falling back to safe defaults.
     """
     return Settings(
-        groq_model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
+        groq_model=os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"),
         max_files=int(os.getenv("MAX_FILES", "20")),
         max_file_mb=float(os.getenv("MAX_FILE_MB", "5")),
         max_concurrency=int(os.getenv("MAX_CONCURRENCY", "3")),
